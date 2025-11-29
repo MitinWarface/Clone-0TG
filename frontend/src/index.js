@@ -1,0 +1,42 @@
+import 'core-js/stable';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+
+const theme = createTheme({
+  palette: {
+    mode: 'dark',
+    primary: {
+      main: '#0088cc',
+    },
+    secondary: {
+      main: '#ffffff',
+    },
+    background: {
+      default: '#1e1e1e',
+      paper: '#2d2d2d',
+    },
+  },
+  typography: {
+    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+  },
+});
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <App />
+    </ThemeProvider>
+  </React.StrictMode>
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
